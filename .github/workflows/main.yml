@@ -1,0 +1,18 @@
+on: [push, pull_request]  # 当推送或 PR 时触发
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest  # 使用 Ubuntu 运行环境
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3  # 拉取代码
+
+      - name: Install GCC
+        run: sudo apt update && sudo apt install -y gcc  # 安装 GCC 编译器
+
+      - name: Compile C program
+        run: gcc -o main helloworld.c  # 编译 C 代码
+
+      - name: Run the program
+        run: ./main  # 运行程序
+
