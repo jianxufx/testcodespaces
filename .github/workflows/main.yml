@@ -11,8 +11,8 @@ jobs:
         run: sudo apt update && sudo apt install -y gcc  # 安装 GCC 编译器
 
       - name: Compile C program
-        run: gcc -o main helloworld.c  # 编译 C 代码
+        run: gcc -o helloworld helloworld.c  # 编译 C 代码
 
       - name: Run the program
-        run: ./main  # 运行程序
+        run: ./helloworld  # 运行程序
 
